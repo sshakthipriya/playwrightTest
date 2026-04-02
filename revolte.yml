@@ -1,0 +1,88 @@
+revolte:
+  version: '1.0'
+  project: iron-field
+  appName: field-exchange
+  env:
+    staging:
+      branch: development
+      services:
+        rid_2:
+          type: WEB_SERVICE
+          name: api-service
+          entryPoint: index.js
+          properties:
+            health: /api/health
+            port: 8080
+            loadBalancerMode: shared
+            variables:
+              MONGO_URL: >-
+                mongodb+srv://antonyrajrichard_db_user:tSR7heGofFH9uAQz@cluster0.ojoabij.mongodb.net/?appName=Cluster0
+              DB_NAME: staging
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+    qa:
+      branch: main
+      services:
+        rid_2:
+          type: WEB_SERVICE
+          name: web_service
+          entryPoint: index.js
+          properties:
+            health: /api/health
+            port: 8080
+            loadBalancerMode: dedicated
+            variables:
+              BASE_URL: /api/v1
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+    production:
+      branch: main
+      services:
+        rid_2:
+          type: WEB_SERVICE
+          name: web_service
+          entryPoint: index.js
+          properties:
+            health: /api/health
+            port: 8080
+            loadBalancerMode: dedicated
+            variables:
+              BASE_URL: /api/v1
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+            autoScaling:
+              replica:
+                min: 1
+                max: 1
+              utilization:
+                cpu:
+                  target: 70
+                memory:
+                  target: 70
+              behavior:
+                scaleDown:
+                  stabilizationWindow: 300
+    preview:
+      services:
+        rid_2:
+          type: WEB_SERVICE
+          name: preview-service
+          entryPoint: index.js
+          properties:
+            health: /api/health
+            port: 8080
+            loadBalancerMode: dedicated
+            variables:
+              MONGO_URL: >-
+                mongodb+srv://antonyrajrichard_db_user:tSR7heGofFH9uAQz@cluster0.ojoabij.mongodb.net/?appName=Cluster0
+              DB_NAME: preview
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
