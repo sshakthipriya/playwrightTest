@@ -1,0 +1,127 @@
+[
+  {
+    "type": "TOKEN_USAGE",
+    "tokens": {
+      "token": 84,
+      "threshold": 100000,
+      "observationToken": 0,
+      "observationThreshold": 160000
+    },
+    "agentType": "developer"
+  },
+  {
+    "type": "TEXT_DELTA",
+    "role": "AGENT",
+    "description": "I'll create",
+    "agentType": "developer"
+  },
+  {
+    "type": "TEXT_DELTA",
+    "role": "AGENT",
+    "description": " a new hello.txt file for you.",
+    "agentType": "developer"
+  },
+  {
+    "type": "TOOL_CALL",
+    "role": "TOOL",
+    "tool": "Write",
+    "args": {
+      "file_path": "/Users/rootquotient/Documents/Projects/revolte.ai/test/hello.txt",
+      "content": "Hello, World!\n"
+    },
+    "toolCallId": "toolu_01CUtxXun9bMqLb75ED2fHKw",
+    "agentType": "developer"
+  },
+  {
+    "type": "TOOL_APPROVAL",
+    "role": "TOOL",
+    "tool": "Write",
+    "args": {
+      "file_path": "/Users/rootquotient/Documents/Projects/revolte.ai/test/hello.txt",
+      "content": "Hello, World!\n"
+    },
+    "toolCallId": "toolu_01CUtxXun9bMqLb75ED2fHKw",
+    "agentType": "developer",
+    "toolId": "378e18dd-a465-43ff-815c-65fd099da813"
+  },
+  {
+    "agentType": "developer",
+    "tool": "Write",
+    "args": {
+      "file_path": "/Users/rootquotient/Documents/Projects/revolte.ai/test/hello.txt",
+      "content": "Hello, World!\n"
+    },
+    "toolId": "bcdb3bb0-4172-4ad2-b7fd-269e178bfb00",
+    "type": "TOOL_EXECUTE"
+  },
+  {
+    "type": "TOOL_RESULT",
+    "role": "TOOL",
+    "tool": "Write",
+    "args": {
+      "content": "Hello, World!\n",
+      "file_path": "/Users/rootquotient/Documents/Projects/revolte.ai/test/hello.txt"
+    },
+    "description": "{\"success\":true,\"message\":\"File written successfully to /Users/rootquotient/Documents/Projects/revolte.ai/test/hello.txt\"}",
+    "toolCallId": "toolu_01CUtxXun9bMqLb75ED2fHKw",
+    "agentType": "developer"
+  },
+  {
+    "type": "STEP_FINISH",
+    "role": "AGENT",
+    "description": "I'll create a new hello.txt file for you.",
+    "reason": "tool-calls",
+    "tokens": {
+      "input": 8792,
+      "output": 108,
+      "total": 8900,
+      "cachedInputTokens": 0
+    },
+    "agentType": "developer"
+  },
+  {
+    "type": "TOKEN_USAGE",
+    "tokens": {
+      "token": 131,
+      "threshold": 100000,
+      "observationToken": 0,
+      "observationThreshold": 160000
+    },
+    "agentType": "developer"
+  },
+  {
+    "type": "TEXT_DELTA",
+    "role": "AGENT",
+    "description": "Done",
+    "agentType": "developer"
+  },
+  {
+    "type": "TEXT_DELTA",
+    "role": "AGENT",
+    "description": "! I've created `hello.txt` with the content \"Hello, World!\" in the current directory.",
+    "agentType": "developer"
+  },
+  {
+    "type": "STEP_FINISH",
+    "role": "AGENT",
+    "description": "Done! I've created `hello.txt` with the content \"Hello, World!\" in the current directory.",
+    "reason": "stop",
+    "tokens": {
+      "input": 8946,
+      "output": 26,
+      "total": 8972,
+      "cachedInputTokens": 0
+    },
+    "agentType": "developer"
+  },
+  {
+    "type": "FINISH",
+    "tokens": {
+      "input": 17738,
+      "output": 134,
+      "total": 17872,
+      "cachedInputTokens": 0
+    },
+    "agentType": "developer"
+  }
+]

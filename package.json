@@ -12,7 +12,8 @@
     "lint": "eslint",
     "seed": "npx tsx src/scripts/seed.ts",
     "seed:direct": "npx tsx src/scripts/seed-direct.ts",
-    "test:e2e": "playwright test"
+    "test:e2e": "npx playwright install && docker compose up -d && npx playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
