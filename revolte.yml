@@ -4,6 +4,8 @@ revolte:
   appName: playWrightApp
 
   config:
+    testSuite:
+      command: "npm run test"
     automationTestSuite:
       command: "npx playwright test"
 
@@ -94,6 +96,7 @@ revolte:
 
     preview:
       automationTestSuite: true
+      testSuite: true
       services:
         rid_2:
           type: WEB_SERVICE
