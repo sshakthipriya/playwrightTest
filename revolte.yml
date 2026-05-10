@@ -94,7 +94,6 @@ revolte:
 
     preview:
       automationTestSuite: true
-
       services:
         rid_2:
           type: WEB_SERVICE
