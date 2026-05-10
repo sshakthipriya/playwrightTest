@@ -21,7 +21,7 @@ revolte:
             health: /api/health
             port: 8080
             loadBalancerMode: shared
-
+ 
             variables:
               MONGO_URL: >-
                 mongodb+srv://antonyrajrichard_db_user:tSR7heGofFH9uAQz@cluster0.ojoabij.mongodb.net/?appName=Cluster0
