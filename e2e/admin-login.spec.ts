@@ -65,7 +65,9 @@ test.describe('Admin Login Flow', () => {
   test('should show error when credentials are invalid', async ({ page }) => {
     await loginPage.login(ADMIN_EMAIL, INVALID_PASSWORD);
     // Wait for error toast message
-    const errorToast = page.locator('text=/invalid|incorrect|wrong|failed|unauthorized|invalid|failed/i');
+  const errorToast = page.getByText(
+  /invalid|incorrect|wrong|failed|unauthorized/i
+);
     await expect(errorToast).toBeVisible({ timeout: 5000 });
     // Should still be on login page
     await expect(loginPage.submitButton).toBeVisible();
