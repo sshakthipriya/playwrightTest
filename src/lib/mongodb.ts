@@ -1,7 +1,7 @@
 import { MongoClient, Db } from "mongodb";
 
-const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017";
-const DB_NAME = process.env.DB_NAME || "fieldexchange";
+const MONGO_URL = 'mongodb+srv://admin:admin@cluster0.qucnsjc.mongodb.net/?appName=Cluster0';
+const DB_NAME = 'fieldexchange';
 
 let client: MongoClient;
 let db: Db;

@@ -1,8 +1,11 @@
 revolte:
-  version: '1.0'
+  version: "1.0"
   project: optum
   appName: playWrightApp
   env:
+    config:
+      automationTestSuite:
+        command: "npx playwright test"
     staging:
       branch: development
       services:
@@ -69,6 +72,7 @@ revolte:
                 scaleDown:
                   stabilizationWindow: 300
     preview:
+      automationTestSuite: true
       services:
         rid_2:
           type: WEB_SERVICE
