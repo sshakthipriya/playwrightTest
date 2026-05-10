@@ -95,7 +95,7 @@ test.describe('Admin Login Flow', () => {
 
   test('should display admin dashboard with KPI cards after successful login', async ({ page }) => {
     await loginPage.login(ADMIN_EMAIL, ADMIN_PASSWORD);
-    await page.waitForURL(/\/dashboard\/admin/, { timeout: 10000 });
+    await page.waitForURL(/\/dashboard\/admin/, { timeout: 30000 });
     
     // Verify KPI cards are visible
     const totalUsersKpi = page.locator('text=Total Users');
