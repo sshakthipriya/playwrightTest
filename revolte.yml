@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: iron-field
-  appName: field-exchange
+  project: optum
+  appName: playWrightApp
   env:
     staging:
       branch: development
